@@ -1,13 +1,16 @@
 #include <iostream>
-using namespace std;
 
-int fib(int n) {
-    if(n == 1){ return 0; };
-    if(n == 2){ return 1; };
-    return fib(n - 1) + fib(n - 2);
+void fib(int n) {
+    int a = 0, b = 1;
+    for (int i = 0; i < n; i++) {
+        std::cout << a << std::endl;
+        int next = a + b;
+        a = b;
+        b = next;
+    }
 }
 
-int main(){
-    cout << fib(10) << endl;
-	return 0;
+int main() {
+    fib(10);
+    return 0;
 }
